@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 게임 모드, 거르기, 배속 -->
+<com.toeicword.app.ui.widget.FlowRowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:centerRows="true"
+    app:horizontalGap="8dp"
+    app:verticalGap="6dp">
+
+    <com.toeicword.app.ui.widget.RoundedLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_seg_group"
+        android:foreground="@drawable/fg_seg_group"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/modeKrEn"
+            style="@style/ToeicSegItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mode_kr_en" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/panel_dark" />
+
+        <TextView
+            android:id="@+id/modeEnKr"
+            style="@style/ToeicSegItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mode_en_kr" />
+    </com.toeicword.app.ui.widget.RoundedLinearLayout>
+
+    <include
+        android:id="@+id/filters"
+        layout="@layout/include_filter_chips" />
+
+    <!-- 배속 0.5~1.5, 기준 1.0은 정가운데. 칸 수(max)는 MainActivity가 Config에 맞춰 정한다. -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_seg_group"
+        android:foreground="@drawable/fg_seg_group"
+        android:gravity="center_vertical"
+        android:minHeight="34dp"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/speed_label"
+            android:textColor="@color/panel_text"
+            android:textSize="14sp" />
+
+        <SeekBar
+            android:id="@+id/speed"
+            android:layout_width="@dimen/speed_bar_width"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/speed_label"
+            android:maxHeight="6dp"
+            android:minHeight="6dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:progressDrawable="@drawable/seek_track"
+            android:splitTrack="false"
+            android:thumb="@drawable/seek_thumb"
+            android:tickMark="@drawable/seek_tick" />
+
+        <TextView
+            android:id="@+id/speedValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="34dp"
+            android:textColor="@color/gold_light"
+            android:textSize="14sp"
+            tools:text="×1.0" />
+    </LinearLayout>
+</com.toeicword.app.ui.widget.FlowRowLayout>

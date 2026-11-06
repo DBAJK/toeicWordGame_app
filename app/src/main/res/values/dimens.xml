@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_max_width">1100dp</dimen>
+    <dimen name="speed_bar_width">176dp</dimen>
+    <dimen name="panel_max_width">580dp</dimen>
+    <dimen name="panel_small_max_width">380dp</dimen>
+    <dimen name="info_panel_max_width">540dp</dimen>
+    <dimen name="card_max_width">540dp</dimen>
+
+    <!-- 세로 화면 기준. 가로와 넓은 화면은 values-w600dp, values-w860dp-h640dp에서 덮어쓴다. -->
+    <dimen name="logo_big">44sp</dimen>
+    <dimen name="logo_small">28sp</dimen>
+    <dimen name="tile_thumb_height">46dp</dimen>
+    <dimen name="tile_thumb_text">15sp</dimen>
+    <dimen name="tile_monster_size">24dp</dimen>
+    <dimen name="tile_star_text">11sp</dimen>
+    <dimen name="tile_name_text">15sp</dimen>
+
+    <dimen name="dict_margin">8dp</dimen>
+</resources>

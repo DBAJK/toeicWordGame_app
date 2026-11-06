@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android" android:color="@color/ripple_dark">
+    <item>
+        <selector>
+            <item android:state_pressed="true">
+                <layer-list>
+                    <item android:bottom="2dp" android:top="1dp">
+                        <shape android:shape="oval">
+                            <solid android:color="#A08F70" />
+                        </shape>
+                    </item>
+                    <item android:bottom="3dp">
+                        <shape android:shape="oval">
+                            <gradient android:angle="270" android:endColor="@color/parchment_dark" android:startColor="@color/parchment" />
+                            <stroke android:width="1dp" android:color="@color/edge" />
+                        </shape>
+                    </item>
+                </layer-list>
+            </item>
+            <item>
+                <layer-list>
+                    <item android:top="3dp">
+                        <shape android:shape="oval">
+                            <solid android:color="@color/drop_shadow" />
+                        </shape>
+                    </item>
+                    <item android:bottom="1dp" android:top="2dp">
+                        <shape android:shape="oval">
+                            <solid android:color="#A08F70" />
+                        </shape>
+                    </item>
+                    <item android:bottom="3dp">
+                        <shape android:shape="oval">
+                            <gradient android:angle="270" android:endColor="@color/parchment_dark" android:startColor="@color/parchment" />
+                            <stroke android:width="1dp" android:color="@color/edge" />
+                        </shape>
+                    </item>
+                </layer-list>
+            </item>
+        </selector>
+    </item>
+</ripple>

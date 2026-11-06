@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 카드 아래로 6dp 내려 놓는다: 받침 4dp + 그림자 2dp -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/drop_shadow" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+    <item android:bottom="2dp">
+        <shape>
+            <solid android:color="#5E6268" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+</layer-list>

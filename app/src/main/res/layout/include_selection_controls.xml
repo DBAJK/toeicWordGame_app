@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 사전용: 무대(난이도) 또는 페이지 범위 + 거르기 -->
+<com.toeicword.app.ui.widget.FlowRowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:horizontalGap="8dp"
+    app:verticalGap="6dp">
+
+    <com.toeicword.app.ui.widget.SelectBoxView
+        android:id="@+id/stage"
+        style="@style/ToeicSelect.Gold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="페이지 범위 ▾" />
+
+    <include
+        android:id="@+id/pageRange"
+        layout="@layout/include_page_range" />
+
+    <include
+        android:id="@+id/filters"
+        layout="@layout/include_filter_chips" />
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="@color/score_yellow"
+        android:textSize="15sp"
+        tools:text="3,037개" />
+</com.toeicword.app.ui.widget.FlowRowLayout>

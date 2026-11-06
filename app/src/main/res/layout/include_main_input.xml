@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 빨간 '입력' 표시 + 초록 입력창. 둘 사이에는 선을 두지 않고 바깥 테두리만 그린다. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="42dp"
+    android:foreground="@drawable/fg_input_frame"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_input_tag"
+        android:gravity="center"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="@string/input_tag"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/field"
+        style="@style/ToeicInput"
+        tools:ignore="Autofill"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bg_input_main"
+        android:hint="@string/input_hint"
+        android:imeOptions="actionGo|flagNoFullscreen|flagNoExtractUi"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColor="#1D2B0A"
+        android:textColorHint="#4F6B25"
+        android:textSize="15sp" />
+</LinearLayout>

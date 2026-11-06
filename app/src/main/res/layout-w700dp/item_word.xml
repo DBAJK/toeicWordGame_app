@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="8dp"
+    android:paddingTop="4dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="4dp">
+
+    <LinearLayout
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/muted"
+            android:textSize="13sp"
+            tools:text="1024" />
+
+        <TextView
+            android:id="@+id/level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textColor="@color/word_level"
+            android:textSize="11sp"
+            tools:text="★★★" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/word"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_weight="1.1"
+        android:textColor="@color/word_text"
+        android:textSize="17sp"
+        tools:text="achieve" />
+
+    <TextView
+        android:id="@+id/meaning"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_weight="2"
+        android:textColor="@color/ink"
+        android:textSize="14sp"
+        tools:text="성취하다, 달성하다" />
+
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:textColor="@color/muted"
+        android:textSize="12sp"
+        tools:text="동사 · 빈출" />
+
+    <TextView
+        android:id="@+id/star"
+        style="@style/ToeicMark.Star"
+        android:layout_marginStart="6dp"
+        android:contentDescription="@string/column_star"
+        android:text="@string/mark_star" />
+
+    <TextView
+        android:id="@+id/memorized"
+        style="@style/ToeicMark.Check"
+        android:layout_marginStart="6dp"
+        android:contentDescription="@string/column_memorized"
+        android:text="@string/mark_check" />
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="OutlinedTextView">
+        <attr name="android:text" />
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+        <attr name="outlineColor" format="color" />
+        <attr name="outlineWidth" format="dimension" />
+        <!-- 글자 아래로 튀어나오는 입체 두께 -->
+        <attr name="textDepth" format="dimension" />
+        <!-- 로고의 주황빛 세로 그라데이션 -->
+        <attr name="logoFill" format="boolean" />
+        <attr name="blackWeight" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="FlowRowLayout">
+        <attr name="horizontalGap" format="dimension" />
+        <attr name="verticalGap" format="dimension" />
+        <attr name="centerRows" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="BoardBackdropView">
+        <attr name="board" format="enum">
+            <enum name="oven" value="0" />
+            <enum name="sink" value="1" />
+            <enum name="box" value="2" />
+            <enum name="fridge" value="3" />
+            <enum name="table" value="4" />
+        </attr>
+        <!-- 장식을 함께 그릴 무대 번호(THEMES). 없으면 배경만 그린다. -->
+        <attr name="decorationTheme" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="StageTileView">
+        <!-- 무대 번호 1~5 -->
+        <attr name="stageNumber" format="integer" />
+    </declare-styleable>
+</resources>

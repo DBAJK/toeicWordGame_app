@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 입체 버튼. 배경의 아래쪽 3dp가 받침(2dp)과 그림자(1dp)라 글자가 가운데 오도록 아래 여백을 더 둔다. -->
+    <style name="ToeicButton">
+        <item name="android:stateListAnimator">@animator/raised_button</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="ToeicButton.Primary">
+        <item name="android:background">@drawable/btn_primary</item>
+        <item name="android:textColor">#FFF3DF</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">11dp</item>
+    </style>
+
+    <style name="ToeicButton.Secondary" parent="ToeicButton.Primary">
+        <item name="android:background">@drawable/btn_secondary</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <style name="ToeicButton.Gray">
+        <item name="android:background">@drawable/btn_gray</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="ToeicButton.Back">
+        <item name="android:background">@drawable/btn_back</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+    </style>
+
+    <style name="ToeicButton.Circle">
+        <item name="android:background">@drawable/btn_circle</item>
+        <item name="android:textColor">@color/brown</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">7dp</item>
+    </style>
+
+    <style name="ToeicSegItem">
+        <item name="android:background">@drawable/bg_seg_item</item>
+        <item name="android:textColor">@color/seg_text</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">34dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="ToeicChip" parent="ToeicSegItem">
+        <item name="android:background">@drawable/bg_chip</item>
+    </style>
+
+    <style name="ToeicSelect">
+        <item name="android:background">@drawable/bg_select</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="ToeicSelect.Gold">
+        <item name="android:background">@drawable/bg_select_gold</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
+    <!-- 전체화면 키보드가 게임을 가리지 않도록 flagNoFullscreen|flagNoExtractUi를 항상 붙인다. -->
+    <style name="ToeicInput">
+        <item name="android:inputType">text|textNoSuggestions</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:importantForAutofill" tools:targetApi="26">no</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="ToeicPanelTitle">
+        <item name="android:background">@drawable/bg_panel_title</item>
+        <item name="android:textColor">@color/brown</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+
+    <style name="ToeicEmoji">
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="ToeicRecordHeader">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_records_header</item>
+        <item name="android:textColor">#222222</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingTop">1dp</item>
+        <item name="android:paddingBottom">1dp</item>
+    </style>
+
+    <style name="ToeicRecordCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ToeicWordHeader">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/word_header_text</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="ToeicMark">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="ToeicMark.Star">
+        <item name="android:background">@drawable/bg_mark_star</item>
+        <item name="android:textColor">@color/mark_star_text</item>
+    </style>
+
+    <style name="ToeicMark.Check">
+        <item name="android:background">@drawable/bg_mark_check</item>
+        <item name="android:textColor">@color/mark_check_text</item>
+    </style>
+
+    <style name="ToeicCardMeta">
+        <item name="android:textColor">@color/muted</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="ToeicCardMain">
+        <item name="android:textColor">#222222</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

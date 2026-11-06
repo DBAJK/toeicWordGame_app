@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_big">66sp</dimen>
+    <dimen name="logo_small">42sp</dimen>
+    <dimen name="tile_thumb_height">64dp</dimen>
+    <dimen name="tile_thumb_text">22sp</dimen>
+    <dimen name="tile_monster_size">32dp</dimen>
+    <dimen name="tile_star_text">15sp</dimen>
+    <dimen name="tile_name_text">19sp</dimen>
+</resources>

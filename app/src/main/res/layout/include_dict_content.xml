@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 목록·카드·빈 안내 중 하나만 보인다. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.toeicword.app.ui.widget.RoundedLinearLayout
+        android:id="@+id/listPane"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_word_list"
+        android:foreground="@drawable/fg_word_list"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/listHeader"
+            layout="@layout/include_word_header" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </com.toeicword.app.ui.widget.RoundedLinearLayout>
+
+    <include
+        android:id="@+id/cardPane"
+        layout="@layout/include_card_study"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/empty_words"
+        android:textColor="@color/panel_muted"
+        android:textSize="17sp"
+        android:visibility="gone" />
+</FrameLayout>

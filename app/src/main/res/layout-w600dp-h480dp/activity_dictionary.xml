@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 단어 사전(넓고 높은 화면): res/layout과 같이 세로로 쌓는다. 낮은 가로 화면만 layout-w600dp를 쓴다. -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_background"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".DictionaryActivity">
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/screen_max_width">
+
+        <com.toeicword.app.ui.widget.BoardBackdropView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:board="box"
+            app:decorationTheme="2" />
+
+        <LinearLayout
+            android:id="@+id/panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dict_margin"
+            android:background="@drawable/bg_panel"
+            android:orientation="vertical"
+            android:padding="13dp">
+
+            <include
+                android:id="@+id/header"
+                layout="@layout/include_dict_header" />
+
+            <include
+                android:id="@+id/controls"
+                layout="@layout/include_selection_controls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <include
+                android:id="@+id/search"
+                layout="@layout/include_dict_search"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp" />
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/include_dict_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <include
+                android:id="@+id/dictContent"
+                layout="@layout/include_dict_content"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

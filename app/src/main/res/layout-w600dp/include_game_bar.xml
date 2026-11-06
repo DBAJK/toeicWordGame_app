@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 하단 바(가로 화면): 점수·입력창·게이지·단계를 한 줄에 놓는다. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_game_bar"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="12dp"
+    android:paddingTop="9dp"
+    android:paddingEnd="12dp"
+    android:paddingBottom="6dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score"
+        android:textColor="@color/sand"
+        android:textSize="14sp" />
+
+    <com.toeicword.app.ui.widget.OutlinedTextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:textColor="@color/score_yellow"
+        android:textSize="32sp"
+        app:outlineColor="@color/score_outline"
+        app:outlineWidth="2dp"
+        app:textDepth="2dp"
+        tools:text="1,280" />
+
+    <EditText
+        android:id="@+id/answer"
+        style="@style/ToeicInput"
+        tools:ignore="Autofill"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_input_answer"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:textColor="@color/ink"
+        android:textColorHint="@color/hint"
+        android:textSize="19sp"
+        android:hint="@string/answer_hint_en" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/bg_gauge_tag"
+        android:maxLines="1"
+        android:paddingStart="6dp"
+        android:paddingTop="1dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="1dp"
+        android:text="@string/next_stage"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <ProgressBar
+        android:id="@+id/gauge"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="90dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="6dp"
+        android:max="1000"
+        android:progressDrawable="@drawable/gauge_progress" />
+
+    <include
+        android:id="@+id/stagePill"
+        layout="@layout/include_stage_pill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp" />
+
+    <Button
+        android:id="@+id/exit"
+        style="@style/ToeicButton.Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="@string/exit_long" />
+</LinearLayout>

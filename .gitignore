@@ -1,0 +1,26 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/.idea/deploymentTargetSelector.xml
+/.idea/deviceManager.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+.kotlin
+local.properties
+
+# 단어 데이터: 외부 출처 원본이라 저장소에 올리지 않음 (README.md 참고)
+/app/src/main/assets/words.json
+
+# 출시용 서명 키와 비밀번호: 절대 저장소에 올리지 않음
+/keystore.properties
+*.jks
+*.keystore

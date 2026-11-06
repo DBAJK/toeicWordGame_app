@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 왼쪽 위 프로필·최고 기록·하트. 크기는 보드에 맞춰 GameActivity가 조절한다. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="12dp"
+    tools:ignore="SpUsage">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/avatar"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_avatar">
+
+            <TextView
+                android:id="@+id/avatarEmoji"
+                style="@style/ToeicEmoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/chef"
+                android:textSize="38dp" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bestLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/bg_best_label"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/best_score"
+                android:textColor="@color/ink"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/bestScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_best_value"
+                android:gravity="end"
+                android:maxLines="1"
+                android:minWidth="120dp"
+                android:paddingStart="12dp"
+                android:paddingTop="1dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="1dp"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                tools:text="1,280" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.toeicword.app.ui.game.HeartsView
+        android:id="@+id/hearts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp" />
+</LinearLayout>

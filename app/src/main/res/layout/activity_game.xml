@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 게임 화면. 보드(배경 → 단어 → 머리글 → 연출 → 일시정지 순으로 겹침)와 하단 바 -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_background"
+    tools:context=".GameActivity"
+    tools:ignore="SpUsage">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/screen_max_width">
+
+        <FrameLayout
+            android:id="@+id/board"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.toeicword.app.ui.widget.BoardBackdropView
+                android:id="@+id/backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.toeicword.app.ui.game.GameBoardView
+                android:id="@+id/gameBoard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:importantForAccessibility="no" />
+
+            <include
+                android:id="@+id/hud"
+                layout="@layout/include_game_hud" />
+
+            <FrameLayout
+                android:id="@+id/pauseTile"
+                android:layout_width="54dp"
+                android:layout_height="57dp"
+                android:layout_gravity="top|end"
+                android:layout_margin="12dp"
+                android:background="@drawable/bg_pause_tile"
+                android:clickable="true"
+                android:contentDescription="@string/pause"
+                android:focusable="false"
+                tools:ignore="KeyboardInaccessibleWidget">
+
+                <TextView
+                    android:id="@+id/pauseEmoji"
+                    style="@style/ToeicEmoji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingBottom="3dp"
+                    android:text="@string/cupcake"
+                    android:textSize="30dp" />
+            </FrameLayout>
+
+            <com.toeicword.app.ui.widget.OutlinedTextView
+                android:id="@+id/stageBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center_horizontal"
+                android:textColor="@color/score_yellow"
+                android:textSize="68sp"
+                android:visibility="gone"
+                app:outlineColor="@color/score_outline"
+                app:outlineWidth="4dp"
+                app:textDepth="6dp" />
+
+            <com.toeicword.app.ui.game.MissFlashView
+                android:id="@+id/missFlash"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/pauseOverlay"
+                layout="@layout/include_pause_overlay"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <include
+            android:id="@+id/bar"
+            layout="@layout/include_game_bar" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/resultOverlay"
+        layout="@layout/include_result_overlay"
+        android:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

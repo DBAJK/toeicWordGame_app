@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 가운데 반투명 안내판 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#B3231612" />
+    <corners android:radius="14dp" />
+</shape>

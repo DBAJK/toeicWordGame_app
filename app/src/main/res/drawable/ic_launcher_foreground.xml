@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 🧁 컵케이크를 벡터로 그린 아이콘. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFC8703A"
+        android:pathData="M36,57L72,57L67,79Q66.5,81 64,81L44,81Q41.5,81 41,79Z" />
+    <path
+        android:fillColor="#FFA8521D"
+        android:pathData="M43,57L46,57L49,81L46,81ZM52.5,57L55.5,57L55.5,81L52.5,81ZM62,57L65,57L62,81L59,81Z" />
+    <path
+        android:fillColor="#FFFF8FB1"
+        android:pathData="M34,58C30,50 36,45 41,45C39,37 47,33 52,35C53,29 62,31 62,37C70,37 73,44 69,48C76,49 77,57 73,60C60,62 46,62 34,60Z" />
+    <path
+        android:fillColor="#FFFFC2D4"
+        android:pathData="M41,47C44,44 49,44 52,46C49,47 45,48 41,50ZM52,38C55,36 59,36 61,38C58,39 55,40 52,41Z" />
+    <path
+        android:fillColor="#FFD8293F"
+        android:pathData="M54,31a5,5 0,1 0,10 0a5,5 0,1 0,-10 0" />
+    <path
+        android:fillColor="#FFFFD84A"
+        android:pathData="M44,53a1.5,1.5 0,1 0,3 0a1.5,1.5 0,1 0,-3 0M56,50a1.5,1.5 0,1 0,3 0a1.5,1.5 0,1 0,-3 0M65,55a1.5,1.5 0,1 0,3 0a1.5,1.5 0,1 0,-3 0" />
+</vector>

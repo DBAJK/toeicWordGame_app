@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.toeicword.app.ui.widget.FlowRowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:horizontalGap="8dp"
+    app:verticalGap="8dp">
+
+    <TextView
+        style="@style/ToeicPanelTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dictionary_title" />
+
+    <Button
+        android:id="@+id/home"
+        style="@style/ToeicButton.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dictionary_home" />
+
+    <Button
+        android:id="@+id/startGame"
+        style="@style/ToeicButton.Primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="🧁 이 범위로 게임 (KR→EN)" />
+</com.toeicword.app.ui.widget.FlowRowLayout>

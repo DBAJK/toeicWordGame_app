@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 배속 조절 손잡이. 아래쪽 1dp 그림자로 다른 입체 요소와 맞춘다. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="1dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/drop_shadow" />
+            <size android:width="20dp" android:height="20dp" />
+        </shape>
+    </item>
+    <item android:bottom="1dp">
+        <shape android:shape="oval">
+            <gradient android:angle="270" android:endColor="@color/gold" android:startColor="@color/gold_light" />
+            <stroke android:width="1dp" android:color="#995A2F00" />
+            <size android:width="20dp" android:height="20dp" />
+        </shape>
+    </item>
+</layer-list>

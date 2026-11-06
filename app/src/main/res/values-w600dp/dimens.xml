@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_big">38sp</dimen>
+    <dimen name="logo_small">26sp</dimen>
+</resources>

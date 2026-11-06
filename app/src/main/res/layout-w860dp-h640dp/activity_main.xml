@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 메인 화면(넓은 화면): 오븐·개수대 왼쪽, 과자 상자·냉장고 오른쪽, 식탁 가운데 아래 -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_background"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="@dimen/screen_max_width">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.toeicword.app.ui.widget.KitchenBackdropView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="8dp">
+
+                    <include layout="@layout/include_logo" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp">
+
+                        <LinearLayout
+                            android:id="@+id/leftTiles"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/infoPanel"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.toeicword.app.ui.widget.StageTileView
+                                android:id="@+id/tile1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:stageNumber="1" />
+
+                            <com.toeicword.app.ui.widget.StageTileView
+                                android:id="@+id/tile2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                app:stageNumber="2" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/infoPanel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginEnd="18dp"
+                            android:background="@drawable/bg_info_panel"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingStart="12dp"
+                            android:paddingTop="10dp"
+                            android:paddingEnd="12dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/rightTiles"
+                            app:layout_constraintStart_toEndOf="@id/leftTiles"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintWidth_max="@dimen/info_panel_max_width">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:lineSpacingExtra="4dp"
+                                android:text="@string/info_text"
+                                android:textColor="@android:color/white"
+                                android:textSize="13sp" />
+
+                            <include
+                                android:id="@+id/options"
+                                layout="@layout/include_main_options"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp" />
+
+                            <include
+                                android:id="@+id/free"
+                                layout="@layout/include_main_free"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center"
+                                android:text="@string/info_hint"
+                                android:textColor="@color/hint_yellow"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/rightTiles"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/infoPanel"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <com.toeicword.app.ui.widget.StageTileView
+                                android:id="@+id/tile3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:stageNumber="3" />
+
+                            <com.toeicword.app.ui.widget.StageTileView
+                                android:id="@+id/tile4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                app:stageNumber="4" />
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.toeicword.app.ui.widget.StageTileView
+                        android:id="@+id/tile5"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:stageNumber="5" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <include
+                android:id="@+id/recordsOverlay"
+                layout="@layout/include_records_overlay"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <include
+            android:id="@+id/bar"
+            layout="@layout/include_main_bar" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/messageOverlay"
+        layout="@layout/include_message_overlay"
+        android:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

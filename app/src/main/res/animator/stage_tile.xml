@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 무대 카드: 누르면 살짝 작아지고, 단어가 없으면 흐려진다. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <set>
+            <objectAnimator
+                android:duration="0"
+                android:propertyName="alpha"
+                android:valueTo="0.6"
+                android:valueType="floatType" />
+        </set>
+    </item>
+    <item android:state_pressed="true">
+        <set>
+            <objectAnimator
+                android:duration="0"
+                android:propertyName="scaleX"
+                android:valueTo="0.98"
+                android:valueType="floatType" />
+            <objectAnimator
+                android:duration="0"
+                android:propertyName="scaleY"
+                android:valueTo="0.98"
+                android:valueType="floatType" />
+            <objectAnimator
+                android:duration="0"
+                android:propertyName="translationY"
+                android:valueTo="1dp"
+                android:valueType="floatType" />
+        </set>
+    </item>
+    <item>
+        <set>
+            <objectAnimator
+                android:duration="0"
+                android:propertyName="alpha"
+                android:valueTo="1"
+                android:valueType="floatType" />
+            <objectAnimator
+                android:duration="0"
+                android:propertyName="scaleX"
+                android:valueTo="1"
+                android:valueType="floatType" />
+            <objectAnimator
+                android:duration="0"
+                android:propertyName="scaleY"
+                android:valueTo="1"
+                android:valueType="floatType" />
+            <objectAnimator
+                android:duration="0"
+                android:propertyName="translationY"
+                android:valueTo="0dp"
+                android:valueType="floatType" />
+        </set>
+    </item>
+</selector>

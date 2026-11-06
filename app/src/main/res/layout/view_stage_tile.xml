@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="SpUsage"
+    tools:layout_height="wrap_content"
+    tools:layout_width="130dp"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <!-- 위쪽 손잡이 -->
+    <View
+        android:id="@+id/handle"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:background="@drawable/bg_tile_handle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.56" />
+
+    <!-- 아래로 6dp 튀어나온 받침(4dp)과 그림자(2dp) -->
+    <View
+        android:id="@+id/depth"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_tile_depth"
+        android:translationY="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/body"
+        app:layout_constraintEnd_toEndOf="@id/body"
+        app:layout_constraintStart_toStartOf="@id/body"
+        app:layout_constraintTop_toTopOf="@id/body" />
+
+    <com.toeicword.app.ui.widget.RoundedLinearLayout
+        android:id="@+id/body"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/bg_tile_body"
+        android:foreground="@drawable/fg_tile_body"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.toeicword.app.ui.widget.RoundedFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tile_thumb_height"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_tile_thumb"
+            android:foreground="@drawable/fg_tile_thumb">
+
+            <com.toeicword.app.ui.widget.BoardBackdropView
+                android:id="@+id/thumbBackdrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/thumbText"
+                style="@style/ToeicEmoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="3dp"
+                android:textSize="@dimen/tile_thumb_text"
+                tools:text="🥐🍪" />
+
+            <TextView
+                android:id="@+id/thumbMonster"
+                style="@style/ToeicEmoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="2dp"
+                android:textSize="@dimen/tile_monster_size"
+                tools:text="👾" />
+        </com.toeicword.app.ui.widget.RoundedFrameLayout>
+
+        <TextView
+            android:id="@+id/stars"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_tile_stars"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/score_yellow"
+            android:textSize="@dimen/tile_star_text"
+            tools:text="★★★" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textColor="#1D1D1D"
+                android:textSize="@dimen/tile_name_text"
+                tools:text="오븐" />
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textColor="#7B7F86"
+                android:textSize="11sp"
+                tools:text="512단어" />
+        </LinearLayout>
+    </com.toeicword.app.ui.widget.RoundedLinearLayout>
+</merge>
