@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 아래 입력 바. 가로 화면은 입력창과 버튼을 한 줄에 놓는다. -->
+<!-- 아래 버튼 바. 가로 화면은 버튼을 한 줄에 놓는다. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_main_bar"
-    android:gravity="center_vertical"
+    android:gravity="center"
     android:orientation="horizontal"
     android:paddingStart="12dp"
     android:paddingTop="11dp"
     android:paddingEnd="12dp"
     android:paddingBottom="10dp">
 
-    <include
-        android:id="@+id/input"
-        layout="@layout/include_main_input"
-        android:layout_width="0dp"
-        android:layout_height="42dp"
-        android:layout_weight="1" />
-
     <Button
         android:id="@+id/openDictionary"
         style="@style/ToeicButton.Gray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:text="@string/open_dictionary" />
 
     <Button

@@ -8,25 +8,19 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.isVisible
 import com.toeicword.app.databinding.ActivityMainBinding
 import com.toeicword.app.domain.GameMode
-import com.toeicword.app.domain.normalizeKo
 import com.toeicword.app.game.SPEED_STEPS
-import com.toeicword.app.game.STAGES
 import com.toeicword.app.game.speedAt
 import com.toeicword.app.game.speedStepOf
 import com.toeicword.app.ui.AppUiState
 import com.toeicword.app.ui.BaseActivity
-import com.toeicword.app.ui.clearInput
 import com.toeicword.app.ui.commas
-import com.toeicword.app.ui.onSubmit
-import com.toeicword.app.ui.shake
 import com.toeicword.app.ui.show
 import com.toeicword.app.ui.speedLabel
 import java.util.Locale
 
-private val FREE_COMMAND = Regex("^(자유|연습|자유연습|0)$")
 private const val KEY_SHOW_RECORDS = "showRecords"
 
-// 한컴타자연습 '케이크 던지기' 메인 화면처럼: 부엌 배경, 큰 제목, 무대 카드, 가운데 안내판, 아래 입력창.
+// 메인 화면: 부엌 배경, 큰 제목, 무대 카드, 가운데 안내판, 아래 버튼.
 // 화면 크기별 배치는 res/layout(세로), layout-w600dp(가로), layout-w860dp-h640dp(넓은 화면)에 있다.
 class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -58,7 +52,6 @@ class MainActivity : BaseActivity() {
         tiles().forEach { tile -> tile.setOnClickListener { startStage(tile.stageId) } }
         binding.bar.openDictionary.setOnClickListener { openDictionary() }
         binding.bar.showRecords.setOnClickListener { showRecords(true) }
-        binding.bar.input.field.onSubmit(::runCommand)
         binding.recordsOverlay.close.setOnClickListener { showRecords(false) }
 
         showRecords(savedInstanceState?.getBoolean(KEY_SHOW_RECORDS) == true)
@@ -91,26 +84,6 @@ class MainActivity : BaseActivity() {
         binding.free.start.isEnabled = ui.freeCount > 0
         tiles().forEach { it.showCount(ui.stageCounts[it.stageId - 1]) }
         if (binding.recordsOverlay.root.isVisible) binding.recordsOverlay.records.show(ui.records)
-    }
-
-    // 입력창에 무대 이름이나 번호(1~5)를 쳐서 고른다. '자유', '사전', '점수'도 받는다.
-    private fun runCommand() {
-        val ui = store.uiState.value
-        val input = binding.bar.input.field
-        val text = normalizeKo(input.text.toString())
-        if (text.isEmpty()) return
-        val stage = STAGES.find { text == it.id.toString() || text == normalizeKo(it.name) }
-        when {
-            stage != null && ui.stageCounts[stage.id - 1] > 0 -> startStage(stage.id)
-            FREE_COMMAND.matches(text) && ui.freeCount > 0 -> startStage(0)
-            text == "사전" || text == "단어사전" -> openDictionary()
-            text == "점수" || text == "점수보기" -> showRecords(true)
-            else -> {
-                binding.bar.input.root.shake()
-                return
-            }
-        }
-        input.clearInput()
     }
 
     private fun startStage(stage: Int) {

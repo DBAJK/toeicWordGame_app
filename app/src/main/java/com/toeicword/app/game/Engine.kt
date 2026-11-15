@@ -117,6 +117,7 @@ fun step(state: GameState, dt: Double, pool: List<Word>, random: () -> Double = 
             item.progress = 1.0
             item.status = ItemStatus.MISSED
             item.statusAt = state.time
+            if (!state.settings.loseLives) continue
             state.lives -= 1
             state.lastMissAt = state.time
             if (state.lives <= 0) {

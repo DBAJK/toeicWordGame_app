@@ -239,6 +239,7 @@ class GameActivity : BaseActivity() {
         if (toNext != shownGauge) showGauge(toNext)
 
         val breakProgress = if (t - game.lastMissAt < 0.5) ((t - game.lastMissAt) / 0.5).toFloat() else 1f
+        binding.hud.hearts.isVisible = game.settings.loseLives
         binding.hud.hearts.show(game.lives, breakProgress)
         renderBanner(game.stage, t - game.stageUpAt)
         binding.missFlash.show(((t - game.lastMissAt) / 0.45).toFloat())

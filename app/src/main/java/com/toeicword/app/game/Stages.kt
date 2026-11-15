@@ -20,6 +20,7 @@ data class GameSettings(
     val basePoints: Int,
     val specials: List<SpecialEnemy>,
     val theme: Int?, // 고정 배경(THEMES 번호). null이면 단계마다 바뀜
+    val loseLives: Boolean = true, // false면 단어가 바닥에 닿아도 체력이 닳지 않는다(끝나지 않는 연습용)
 )
 
 data class StageDef(
@@ -78,6 +79,7 @@ val STAGES = listOf(
 )
 
 // 페이지 범위로 고르는 자유 연습. 배경은 단계마다 무대를 돌아가며 바뀐다.
-val FREE_SETTINGS = GameSettings(3.4, 1.0, 6, 50, emptyList(), null)
+// 체력이 닳지 않아서 판이 저절로 끝나지 않는다. 그만하려면 일시정지 메뉴나 나가기 버튼을 쓴다.
+val FREE_SETTINGS = GameSettings(3.4, 1.0, 6, 50, emptyList(), null, loseLives = false)
 
 fun stageById(id: Int): StageDef? = STAGES.find { it.id == id }

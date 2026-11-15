@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 메인 화면(휴대폰 가로): 로고, 옵션, 무대 카드 5장 한 줄, 안내판, 아래 입력 바 -->
+<!-- 메인 화면(휴대폰 가로): 로고, 옵션, 무대 카드 5장 한 줄, 안내판, 아래 버튼 바 -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
